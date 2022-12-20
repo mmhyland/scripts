@@ -10,7 +10,7 @@ function Get-TemplateSpecs {
 
 	# Gather/Show Info
 	#foreach($gm in Get-Template){
-	foreach($gm in Get-Template | Where-Object {$_.Name -match 'gm19g-svc'}){
+	foreach($gm in Get-Template | Where-Object {$_.Name -match 'TEMPLATE-NAME'}){
         $gm.ExtensionData.Config.Hardware | 
         Select-Object @{N="Template";E={$gm.Name}}, NumCPU, NumCoresPerSocket, MemoryMB
     }
