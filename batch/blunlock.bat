@@ -1,0 +1,1 @@
+manage-bde -unlock d: -password
