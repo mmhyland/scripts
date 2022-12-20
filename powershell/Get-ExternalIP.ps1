@@ -8,3 +8,7 @@ function Get-ExternalIP {
     $ipinfo.loc
     $ipinfo.org
 }
+
+#######################################
+
+Get-ExternalIP

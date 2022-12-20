@@ -48,3 +48,7 @@ function Test-ServerSSLSupport {
         $RetValue
     }
 }
+
+#######################################
+
+Test-ServerSSLSupport

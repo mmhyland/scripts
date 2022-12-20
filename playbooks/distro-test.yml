@@ -1,0 +1,24 @@
+# ansible-playbook -Kk distro-test.yml --check
+---
+- name: Create file based on distro
+  hosts: HOST-GROUP
+  become: yes
+  tasks:
+
+    - name: Create CentOS file
+      file:
+        path: "/tmp/CentOS"
+        state: touch
+      when: ansible_facts['distribution'] == "CentOS"
+
+    - name: Create Debian/Ubuntu file
+      file:
+        path: "/tmp/Debian_or_Ubuntu"
+        state: touch
+      when: (ansible_distribution == "Debian") or (ansible_distribution == "Ubuntu")
+
+    - name: Create Rocky file
+      file:
+        path: "/tmp/Rocky"
+        state: touch
+      when: ansible_facts['distribution'] == "Rocky"

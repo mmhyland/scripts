@@ -1,0 +1,6 @@
+# ansible-playbook ping-test.yml
+---
+- hosts: HOST-GROUP
+  tasks:
+    - name: Pinging Host
+      action: ping
