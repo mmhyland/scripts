@@ -1,0 +1,15 @@
+# ansible-playbook -Kk /home/dalek/ams-perms/sudo-test.yml
+---
+- name: Test sudo access for a user on a list of servers
+  hosts: HOST-GROUP
+  become: yes
+  vars:
+    user: USERNAME
+  tasks:
+
+  - name: Run "sudo -l -U" to test sudo access
+    ansible.builtin.command: sudo -l -U {{ user }}
+    register: sudoOutput
+
+  - debug: var=sudoOutput.stdout
+
